@@ -19,8 +19,8 @@ list-style: none;
 const UsersList = () => (
     <Wrapper>
         <List>
-            {users.map((userData) => (
-                <UsersListItem key={userData.name} userData={userData} />
+            {users.map((userData, i) => (
+                <UsersListItem index={i} key={userData.name} userData={userData} />
             ))}
         </List>
     </Wrapper>

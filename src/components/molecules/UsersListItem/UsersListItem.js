@@ -20,14 +20,16 @@ content: '';
 }
 `
 
-const UsersListItem = ({userData: {average, name, attendance = '2%'}}) => (
+const showIndex = (index) => alert(`${index + 1}`)
+
+const UsersListItem = ({index, userData: {average, name, attendance = '2%'}}) => (
     <Wrapper>
         <Average average={average}/>
         <StudentDetail
         name={name}
         attendance={attendance}
         />
-        <Button/>
+        <Button onClick={() => showIndex(index)}/>
     </Wrapper>
 );
 
