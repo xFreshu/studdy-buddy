@@ -20,16 +20,16 @@ content: '';
 }
 `
 
-const showIndex = (index) => alert(`${index + 1}`)
 
-const UsersListItem = ({index, userData: {average, name, attendance = '2%'}}) => (
+
+const UsersListItem = ({deleteUser, userData: {average, name, attendance = '2%'}}) => (
     <Wrapper>
         <Average average={average}/>
         <StudentDetail
         name={name}
         attendance={attendance}
         />
-        <Button onClick={() => showIndex(index)}/>
+        <Button onClick={() => deleteUser(name)}/>
     </Wrapper>
 );
 
