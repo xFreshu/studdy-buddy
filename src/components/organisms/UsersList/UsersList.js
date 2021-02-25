@@ -1,5 +1,4 @@
-import React, {useState} from 'react';
-import { users as userData } from 'data/data'
+import React from 'react';
 import UsersListItem from "../../molecules/UsersListItem/UsersListItem";
 import styled from 'styled-components'
 
@@ -16,20 +15,13 @@ const List = styled.ul`
 list-style: none;
 `
 
-const UsersList = () => {
-    const [users, setUsers] = useState(userData)
-
-    const deleteUser = (name) => {
-        const filteredUsers = users.filter(user => user.name !== name)
-        setUsers(filteredUsers);
-    }
-
+const UsersList = ({ users, deleteUser }) => {
 
     return (
         <Wrapper>
             <List>
-                {users.map((userData, i) => (
-                    <UsersListItem deleteUser={deleteUser} index={i} key={userData.name} userData={userData}/>
+                {users.map((userData) => (
+                    <UsersListItem deleteUser={deleteUser} key={userData.name} userData={userData}/>
                 ))}
             </List>
         </Wrapper>

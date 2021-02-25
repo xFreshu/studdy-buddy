@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import Button from "../../atoms/Button/Button";
+import DeleteButton from "../../atoms/DeleteButton/DeleteButton";
 import Average from "../../atoms/Grade/Grade";
-import StudentDetail from "../../atoms/StudentDetail/StudentDetail";
+import StudentDetail from "../StudentDetail/StudentDetail";
 
 const Wrapper = styled.li`
 display: flex;
@@ -29,7 +29,7 @@ const UsersListItem = ({deleteUser, userData: {average, name, attendance = '2%'}
         name={name}
         attendance={attendance}
         />
-        <Button onClick={() => deleteUser(name)}/>
+        <DeleteButton onClick={() => deleteUser(name)}/>
     </Wrapper>
 );
 
