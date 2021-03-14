@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import UsersListItem from "../../molecules/UsersListItem/UsersListItem";
 import styled from 'styled-components'
+import {UsersContext} from 'providers/UsersProviders';
 
 const Wrapper = styled.div`
   background-color: ${({theme}) => theme.colors.white};
@@ -15,13 +16,13 @@ const List = styled.ul`
 list-style: none;
 `
 
-const UsersList = ({ users, deleteUser }) => {
-
+const UsersList = () => {
+    const {users} = useContext(UsersContext)
     return (
         <Wrapper>
             <List>
                 {users.map((userData) => (
-                    <UsersListItem deleteUser={deleteUser} key={userData.name} userData={userData}/>
+                    <UsersListItem key={userData.name} userData={userData}/>
                 ))}
             </List>
         </Wrapper>
