@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import {theme} from "../../../assets/Theme";
+import {theme} from "../../../assets/styles/Theme";
 
 export const Name = styled.p`
 font-size: ${({props}) => theme.fontSize.l};

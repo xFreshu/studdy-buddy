@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import UsersList from 'components/organisms/UsersList/UsersList';
 import {ThemeProvider} from 'styled-components';
-import GlobalStyle from '../../assets/GlobalStyle';
-import {theme} from '../../assets/Theme';
+import GlobalStyle from '../../assets/styles/GlobalStyle';
+import {theme} from '../../assets/styles/Theme';
 import {Wrapper} from './Root.styled';
 import Form from 'components/organisms/Form/Form';
 import {users as usersData} from '../../data/data';

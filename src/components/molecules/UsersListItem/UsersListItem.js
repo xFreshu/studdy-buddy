@@ -1,26 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types'
-import styled from 'styled-components'
 import DeleteButton from "../../atoms/DeleteButton/DeleteButton";
 import Average from "../../atoms/Grade/Grade";
 import StudentDetail from "../StudentDetail/StudentDetail";
-
-const Wrapper = styled.li`
-display: flex;
-align-items: center;
-position: relative;
-padding: 40px 0;
-&:not(:last-child)::after{
-content: '';
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 1px;
-    background-color: lightgrey;
-}
-`
-
-
+import {Wrapper} from "./UsersListItem.styled";
 
 const UsersListItem = ({deleteUser, userData: {average, name, attendance = '2%'}}) => (
     <Wrapper>
