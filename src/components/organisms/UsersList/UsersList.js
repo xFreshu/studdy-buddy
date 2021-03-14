@@ -29,3 +29,4 @@ const UsersList = ({ users, deleteUser }) => {
 };
 
 export default UsersList
+
