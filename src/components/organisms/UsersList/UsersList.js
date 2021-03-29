@@ -1,33 +1,26 @@
-import React, {useContext} from 'react';
-import UsersListItem from "../../molecules/UsersListItem/UsersListItem";
-import styled from 'styled-components'
-import {UsersContext} from 'providers/UsersProviders';
+import React from 'react';
+import PropTypes from 'prop-types';
+import UsersListItem from 'components/molecules/UsersListItem/UsersListItem';
+import { StyledList } from './UsersList.styles';
+import { UserShape } from 'types';
+import { Title } from 'components/atoms/Title/Title';
 
-const Wrapper = styled.div`
-  background-color: ${({theme}) => theme.colors.white};
-  width: 100%;
-  max-width: 500px;
-  padding: 40px 30px;
-  border-radius: 25px;
-  box-shadow: 0 5px 15px -10px rgba(0, 0, 0, 0.3);
-`
-
-const List = styled.ul`
-list-style: none;
-`
-
-const UsersList = () => {
-    const {users} = useContext(UsersContext)
-    return (
-        <Wrapper>
-            <List>
-                {users.map((userData) => (
-                    <UsersListItem key={userData.name} userData={userData}/>
-                ))}
-            </List>
-        </Wrapper>
-    );
+const UsersList = ({ users }) => {
+  return (
+    <>
+      <Title>Students list</Title>
+      <StyledList>
+        {users.map((userData) => (
+          <UsersListItem key={userData.name} userData={userData} />
+        ))}
+      </StyledList>
+    </>
+  );
 };
 
-export default UsersList
+UsersList.propTypes = {
+  users: PropTypes.arrayOf(PropTypes.shape(UserShape)),
+  deleteUser: PropTypes.func,
+};
 
+export default UsersList;

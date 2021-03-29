@@ -10,5 +10,3 @@ export const Button = styled.button`
   font-weight: bold;
   color: ${({ theme }) => theme.colors.darkGrey};
 `;
-
-export default Button;

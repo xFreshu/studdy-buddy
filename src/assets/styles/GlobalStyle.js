@@ -1,16 +1,21 @@
-import {createGlobalStyle} from 'styled-components'
+import { createGlobalStyle } from 'styled-components';
 
-const GlobalStyle = createGlobalStyle`
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-*, *::before, *::after{
-padding: 0;
-margin: 0;
-box-sizing: border-box;
-}
-html{
-font-family: 'Montserrat', sans-serif;
-}
-
-`
-
-export default GlobalStyle
+export const GlobalStyle = createGlobalStyle`
+  html {
+    box-sizing: border-box;
+  }
+  
+  *, *::after, *::before {
+    box-sizing: inherit;
+  }
+  
+  body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  a, button {
+    font-family: 'Montserrat', sans-serif;
+  }
+`;
